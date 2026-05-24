@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DinnerSelectorSystem.MainPage"
+             Title="找晚餐">
+
+    <Grid>
+        <VerticalStackLayout Spacing="25" Padding="30" VerticalOptions="Center">
+
+            <Frame HasShadow="True" CornerRadius="12" BackgroundColor="#2196F3" Padding="0">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnSystemRecommendClicked" />
+                </Frame.GestureRecognizers>
+                <VerticalStackLayout Padding="20" Spacing="10">
+                    <Label Text="系統推薦" FontSize="24" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center"/>
+                    <Label Text="從記錄中透過條件過濾交叉分析比較權重" FontSize="14" TextColor="#E3F2FD" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame HasShadow="True" CornerRadius="12" BackgroundColor="#FF9800" Padding="0">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnRandomPickClicked" />
+                </Frame.GestureRecognizers>
+                <VerticalStackLayout Padding="20" Spacing="10">
+                    <Label Text="隨機挑選" FontSize="24" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center"/>
+                    <Label Text="從附近700公尺挑選正在營業店家中隨機餐點" FontSize="14" TextColor="#FFF3E0" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                </VerticalStackLayout>
+            </Frame>
+
+        </VerticalStackLayout>
+
+        <Grid x:Name="LoadingOverlay" BackgroundColor="#CC000000" IsVisible="False">
+            <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="15">
+                <ActivityIndicator IsRunning="True" Color="White" WidthRequest="50" HeightRequest="50"/>
+                <Label Text="正在為您尋找附近美食..." TextColor="White" FontSize="18" FontAttributes="Bold"/>
+            </VerticalStackLayout>
+        </Grid>
+    </Grid>
+
+</ContentPage>

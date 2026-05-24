@@ -1,0 +1,23 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DinnerSelectorSystem.HistoryBrowseUI"
+             Title="歷史紀錄">
+
+    <Grid>
+        <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
+            <Label Text="開始記錄吧" TextColor="Gray" />
+        </VerticalStackLayout>
+
+        <Button Text="+"
+                FontSize="30"
+                BackgroundColor="#4CAF50"
+                TextColor="White"
+                HeightRequest="60"
+                WidthRequest="60"
+                CornerRadius="30"
+                HorizontalOptions="End"
+                VerticalOptions="End"
+                Margin="30"
+                Clicked="OnAddRecordClicked" />
+    </Grid>
+</ContentPage>

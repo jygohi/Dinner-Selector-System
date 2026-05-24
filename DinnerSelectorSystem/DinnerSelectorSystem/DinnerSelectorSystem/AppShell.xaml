@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="DinnerSelectorSystem.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:DinnerSelectorSystem"
+    Shell.FlyoutBehavior="Disabled"
+    Title="晚餐選擇器">
+
+    <TabBar>
+
+        <Tab Title="找餐點" Icon="search_icon.png">
+            <ShellContent
+                Title="找餐點"
+                ContentTemplate="{DataTemplate local:MainPage}"
+                Route="MainPage" />
+        </Tab>
+
+        <Tab Title="紀錄餐點" Icon="history_icon.png">
+            <ShellContent
+                Title="歷史紀錄"
+                ContentTemplate="{DataTemplate local:HistoryBrowseUI}"
+                Route="HistoryPage" />
+        </Tab>
+
+    </TabBar>
+
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style TargetType="TabBar" ApplyToDerivedTypes="True">
+                <Setter Property="Shell.TabBarBackgroundColor" Value="#F8F8F8" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="#2196F3" />
+                <Setter Property="Shell.TabBarUnselectedColor" Value="#757575" />
+            </Style>
+        </ResourceDictionary>
+    </Shell.Resources>
+
+</Shell>
